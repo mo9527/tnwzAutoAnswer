@@ -1,7 +1,7 @@
 # 微信小游戏头脑风暴辅助贡酒
 
 ## 1、设置fiddler代理：
- 手机和电脑在同一局域网下，设置手机http代理为电脑ip，端口号默认是8888
+ 手机和电脑在同一局域网下，设置手机http代理为电脑ip，fiddler的默认端口号是8888
 ## 2、fiddlerscript中OnBeforeResponse方法里加入代码：
       /**
         头脑王者
