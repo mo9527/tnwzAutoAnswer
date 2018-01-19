@@ -11,6 +11,7 @@
             FiddlerObject.log(responseStr);
             oSession.SaveResponseBody("D:/question/test/tnwz.json");
         }
+        
 ## 3、启动Application
 ## 4、输出项解释：
    正常题目选择等号后面数字最大的选项，如果是否定题目（例如，不包含，不是，不属于等）则选择数字最小的选项
