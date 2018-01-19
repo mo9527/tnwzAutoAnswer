@@ -10,7 +10,7 @@
             var responseStr = oSession.GetResponseBodyAsString();
             FiddlerObject.log(responseStr);
             oSession.SaveResponseBody("D:/question/test/tnwz.json");
-        }
+            }
         
 ## 3、启动Application
 ## 4、输出项解释：
