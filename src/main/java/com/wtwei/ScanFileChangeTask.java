@@ -21,6 +21,9 @@ public class ScanFileChangeTask extends Thread{
        
         while (true){
             File file = new File("D:\\question\\test\\tnwz.json");
+            if (file == null){
+                continue;
+            }
             long modifyTime = file.lastModified();
             if (modifyTime != tmpTime){
                 tmpTime = modifyTime;
@@ -28,6 +31,9 @@ public class ScanFileChangeTask extends Thread{
             }
 
             File file2 = new File("D:\\question\\test\\cddh.json");
+            if (file2 == null){
+                continue;
+            }
             long modifyTime2 = file2.lastModified();
             if (modifyTime2 != tmpTime2){
                 tmpTime2 = modifyTime2;
@@ -49,6 +55,9 @@ public class ScanFileChangeTask extends Thread{
 
             Map map = (Map) com.wtwei.JsonUtil.deserialize(line);
             Map data = (Map) map.get("data");
+            if (data == null) {
+                return;
+            }
 
             String question = (String) data.get("quiz");
             List options = (List) data.get("options");
@@ -76,9 +85,19 @@ public class ScanFileChangeTask extends Thread{
                 return;
             }
             
+            if(line.length() < 20){
+                return;
+            }
+            
             Map map = (Map) JsonUtil.deserialize(line);
             Map dataMap = (Map) map.get("data");
+            if (dataMap == null){
+                return;
+            }
             Map eventMap = (Map) dataMap.get("event");
+            if (eventMap == null){
+                return;
+            }
             String question = (String) eventMap.get("desc");
             question = question.split("\\.")[1];
 
