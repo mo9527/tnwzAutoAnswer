@@ -9,13 +9,7 @@
         if(oSession.HostnameIs("question.hortor.net") && oSession.PathAndQuery == "/question/bat/findQuiz" ){
             var responseStr = oSession.GetResponseBodyAsString();
             FiddlerObject.log(responseStr);
-            
             oSession.SaveResponseBody("D:/question/test/tnwz.json");
-            
-            //var client = new WebClient();
-            
-            //client.DownloadString("http://localhost:8765/tnwz?question="+responseStr);
-        
         }
 ## 3、启动Application
 ## 4、输出项解释：
